@@ -1,0 +1,65 @@
+<h3 class="text-center">Cadastre um veiculo</h3>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div [hidden]="submitted" style="width: 400px">
+            <form [formGroup]="veiculoForm" (submit)="save()">
+                <div class="form-group">
+                    <label for="placa">Placa</label>
+                    <input type="text" class="form-control" formControlName="placa" data-toggle="tooltip"
+                        data-placement="right" title="Digite a placa do carro" name="placa" [(ngModel)]="placa" />
+                    <div class="alert alert-danger"
+                        *ngIf="veiculoForm.get('placa')?.touched &&veiculoForm.get('placa')?.invalid"
+                        style="margin-top: 5px">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cor">Cor</label>
+                    <input type="text" class="form-control" formControlName="cor" data-toggle="tooltip"
+                        data-placement="right" title="Digite a cor do veiculo" name="cor" [(ngModel)]="cor"/>
+                    <div class="alert alert-danger" *ngIf="veiculoForm.get('cor')?.touched &&veiculoForm.get('cor')?.invalid" 
+                    style="margin-top: 5px">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="anoFabricacao">Ano de Fabricação</label>
+                    <input type="text" class="form-control" formControlName="anoFabricacao" data-toggle="tooltip"
+                        data-placement="right" title="Digite o ano de fabricacao do veiculo" name="anoFabricacao" [(ngModel)]="anoFabricacao"/>
+                    <div class="alert alert-danger" *ngIf="veiculoForm.get('anoFabricacao')?.touched &&veiculoForm.get('anoFabricacao')?.invalid" 
+                    style="margin-top: 5px">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="anoModelo">Ano do Modelo</label>
+                    <input type="text" class="form-control" formControlName="anoModelo" data-toggle="tooltip"
+                        data-placement="right" title="Digite o ano de fabricacao do veiculo" name="anoModelo" [(ngModel)]="anoModelo"/>
+                    <div class="alert alert-danger" *ngIf="veiculoForm.get('anoModelo')?.touched &&veiculoForm.get('anoModelo')?.invalid" 
+                    style="margin-top: 5px">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="marca">Marca</label>
+                    <input type="text" class="form-control" formControlName="marca" data-toggle="tooltip"
+                        data-placement="right" title="Digite marca" name="marca" [(ngModel)]="marca"/>
+                    <div class="alert alert-danger"
+                        *ngIf="veiculoForm.get('marca')?.touched &&veiculoForm.get('marca')?.invalid"
+                        style="margin-top: 5px">
+                    </div>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div [hidden]="!submitted">
+            <h5 class="text-success">Curso adicionado com sucesso</h5>
+            <button (click)="addVeiculoForm()" class='btnbtn-primary'>Cadastrar mais curso</button>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
